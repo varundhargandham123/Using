@@ -11,11 +11,15 @@ namespace IDisposableDemo
         {
             this.name = name;
             this.disposename = true;
-        }
+        }/// <summary>
+        /// This method is used to display the name
+        /// </summary>
         public void display()
         {
             Console.WriteLine(this.name);
-        }
+        }/// <summary>
+        /// This method is used to dispose by checking the disposename
+        /// </summary>
         public void Dispose()
         {
             if (disposename)
@@ -25,15 +29,18 @@ namespace IDisposableDemo
 
             }
             disposename = false;
-        }
+        }/// <summary>
+        /// This is the destructor 
+        /// </summary>
         ~IDisposableDemo() {
             Console.WriteLine("disp");
         }
     }
+   
     class DisposableDemo
-    {
+    {   
         public static void Main(string[] args)
-        {
+        { 
             using (IDisposableDemo obj = new IDisposableDemo("varun"))
             {
                 Console.WriteLine("hi");   
